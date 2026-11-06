@@ -13,20 +13,20 @@ while True:
             try:
                 addIncome = int(input("Add Your Income: "))
             except ValueError:
-                print("Pleace add digit")
+                print("Please add digit")
                 continue
             try:
-                addSourse = str(input("Add Income Sorce: "))
+                addSourse = str(input("Add Income Source: "))
             except ValueError:
-                print("Pleace add word")
+                print("Please add word")
                 continue
             try:
                 addDate = input("Enter Date(YYYY-MM-DD): ")
             except ValueError:
-                print("Pleace Enter Digit")
+                print("Please Enter Digit")
                 continue
-            with open("expenses.txt","a") as file:
-                file.write("INCOME"+","+f"{addDate},{addSourse},{addIncome}\n")
+            with open("expenses.txt","a") as f:
+                f.write("INCOME"+","+f"{addDate},{addSourse},{addIncome}\n")
                 print("Add Income successfully")
         
 
@@ -34,25 +34,25 @@ while True:
             try:
                 amount = int(input("Enter Your Amount: "))
             except ValueError:
-                print("Pleace enter digit")
+                print("Please enter digit")
                 continue
             try:
                 catagory = str(input("Enter Catagory(Food, Travel, Rent, Shopping, Other): ")).lower()
             except ValueError:
-                print("Pleace Enter Word")
+                print("Please Enter Word")
                 continue
             if catagory == "food"or catagory == "travel"or catagory == "rent"or catagory == "shopping"or catagory == "other":
                 try:
                     note = str(input("Enter Note: "))
                     AmountDate = input("Enter Date(YYYY-MM-DD): ")
                 except ValueError:
-                    print("Pleace Enter Word")
+                    print("Please Enter Word")
                     continue
-                with open("expenses.txt","a") as file:
-                    file.write("EXPENSES"+","+f"{AmountDate},{catagory},{amount},{note}\n")
+                with open("expenses.txt","a") as f:
+                    f.write("EXPENSES"+","+f"{AmountDate},{catagory},{amount},{note}\n")
                     print("Add Expense Successfully")
             else:
-                print("Pleace Enter Food, Travel, Rent, Shopping, Other This Catagory.")
+                print("Please Enter Food, Travel, Rent, Shopping, Other This Catagory.")
     
 
     elif choise == "3":
